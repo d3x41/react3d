@@ -34,8 +34,8 @@ export default async function RootLayout({ children }: { children: React.ReactNo
       
       logo={
         <div className="flex items-center gap-2">
-          <div className="rounded-full bg-zinc-800 p-2 inline-block">
-            <CodeXml size={24} strokeWidth={2} />
+          <div className="rounded-full bg-background p-2 inline-block">
+            <CodeXml size={24} strokeWidth={2} className='text-foreground'/>
           </div>
           <span className='font-bold'>@playcanvas/react</span>
           <span style={{ opacity: '60%' }}>- Declarative 3D</span>
@@ -53,8 +53,8 @@ export default async function RootLayout({ children }: { children: React.ReactNo
       <Head faviconGlyph="✦" />
       <body>
         <Layout
-          banner={<Banner storageKey="0.3.0-release"><a href="https://github.com/playcanvas/react/releases/tag/v0.3.0" target="_blank" rel="noreferrer">
-            🎉 <b>@playcanvas/react 0.3.0!</b> Now with <b>React 19</b> support. Read more →
+          banner={<Banner storageKey="0.3.2-release"><a href="https://github.com/playcanvas/react/releases/tag/v0.3.2" target="_blank" rel="noreferrer">
+            :rocket: <b>@playcanvas/react 0.3.2!</b> released! Find out more.
           </a></Banner>}
           navbar={navbar}
           footer={<Footer>
