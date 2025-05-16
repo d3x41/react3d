@@ -72,3 +72,6 @@ next-env.d.ts
 .next/
 _pagefind/
 
+*.ply
+packages/docs/public/r/*
+
