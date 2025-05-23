@@ -5,7 +5,7 @@ on:
     branches: [main]
 
 jobs:
-  lint:
+  publish:
     runs-on: ubuntu-latest
 
     steps:
@@ -17,14 +17,11 @@ jobs:
       - name: Checkout Main
         uses: actions/checkout@v4
 
-      - name: Setup Node.js 18.x
-        uses: actions/setup-node@v4
-        with:
-          node-version: 22.x
-          cache: 'npm'
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
 
       - name: Install Dependencies
-        run: npm i
+        run: pnpm install
   
       - name: Continuous Release
-        run: npx pkg-pr-new publish './packages/lib'
+        run: pnpm dlx pkg-pr-new publish './packages/lib'

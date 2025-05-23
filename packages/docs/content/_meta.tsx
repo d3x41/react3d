@@ -1,3 +1,4 @@
+import { Badge } from '@/components/ui/badge';
 import type { MetaRecord } from 'nextra'
 
 // examples list
@@ -18,12 +19,14 @@ const examplesList = {
     href: '/examples/primitives'
   },
   'pointer-events' : {
+    title: 'Pointer Events',
     href: '/examples/pointer-events'
   },
   // "Advanced" : {
   //   type: 'separator',
   // },
   'model-viewer' : {
+    title: "Model Viewer",
     href: '/examples/model-viewer'
   },
   'splats' : {
@@ -31,9 +34,11 @@ const examplesList = {
     href: '/examples/splats'
   },
   'physics' : {
+    title: "Physics",
     href: '/examples/physics'
   },
   'motion' : {
+    title: "Motion",
     href: '/examples/motion'
   },
 }
@@ -45,6 +50,10 @@ const meta: MetaRecord = {
     theme: {
         sidebar: true,
     }
+  },
+  blocks: {
+    title: <div className='flex items-center gap-2'>Blocks<Badge variant="secondary">New</Badge></div>,
+    type: 'page',
   },
   examples: {
     title: 'Examples',
@@ -59,6 +68,9 @@ const meta: MetaRecord = {
     title: 'PlayCanvas Docs',
     href: 'https://developer.playcanvas.com'
   },
+  new:{
+    display: 'hidden'
+  }
 }
 
 

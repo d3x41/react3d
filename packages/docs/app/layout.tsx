@@ -5,7 +5,7 @@ import './globals.css'
 import { Footer, Layout, Navbar } from 'nextra-theme-docs'
 import { Banner, Head } from 'nextra/components'
 import { getPageMap } from 'nextra/page-map'
-import { CodeXml } from 'lucide-react'
+import { Circle } from 'lucide-react'
 import ReactQueryProvider from '@docs-components/ReactQueryProvider'
 
 export const metadata = {
@@ -34,11 +34,11 @@ export default async function RootLayout({ children }: { children: React.ReactNo
       
       logo={
         <div className="flex items-center gap-2">
-          <div className="rounded-full bg-zinc-800 p-2 inline-block">
-            <CodeXml size={24} strokeWidth={2} />
+          <div className="rounded-full bg-background p-2 inline-block">
+            <Circle size={24} strokeWidth={2} className='text-foreground'/>
           </div>
           <span className='font-bold'>@playcanvas/react</span>
-          <span style={{ opacity: '60%' }}>- Declarative 3D</span>
+          <span className='text-muted-foreground hidden lg:inline' style={{ opacity: '60%' }}>- Build 3D apps with React</span>
         </div>
       }
       // PlayCanvas discord server
@@ -50,11 +50,13 @@ export default async function RootLayout({ children }: { children: React.ReactNo
   )
   return (
     <html lang="en" dir="ltr" suppressHydrationWarning>
-      <Head faviconGlyph="✦" />
+      <Head faviconGlyph="◍" >
+        <link rel="icon" type="image/svg+xml" href="/pc-react-logo.svg" />
+      </Head>
       <body>
         <Layout
-          banner={<Banner storageKey="0.3.0-release"><a href="https://github.com/playcanvas/react/releases/tag/v0.3.0" target="_blank" rel="noreferrer">
-            🎉 <b>@playcanvas/react 0.3.0!</b> Now with <b>React 19</b> support. Read more →
+          banner={<Banner storageKey="0.4.0-release"><a href="https://github.com/playcanvas/react/releases/tag/v0.4.0" target="_blank" rel="noreferrer">
+            <b>@playcanvas/react 0.4.0</b> available now!
           </a></Banner>}
           navbar={navbar}
           footer={<Footer>
@@ -69,7 +71,11 @@ export default async function RootLayout({ children }: { children: React.ReactNo
           pageMap={await getPageMap()}
         >
           <ReactQueryProvider>
-            {children}
+            <div data-vaul-drawer-wrapper >
+              <div className="relative min-h-screen">
+                {children}
+              </div>
+            </div>
           </ReactQueryProvider>
         </Layout>
       </body>
