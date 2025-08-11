@@ -1,5 +1,16 @@
 # @playcanvas/react
 
+## 0.7.0
+
+### Minor Changes
+
+- 1e8d7e6: Ensure onInteractionEvent callback does not run if there are no bound pointerEvents in the react tree
+
+### Patch Changes
+
+- 28998cb: Update deps
+- 0b08685: Ensure Picker is not running unnecessarily
+
 ## 0.6.0
 
 ### Minor Changes
